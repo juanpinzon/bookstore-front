@@ -1,0 +1,38 @@
+<h2>List all the books - {{nbBooks}}</h2>
+<div *ngFor="let book of books">
+  <!-- media: Easy way to align media objects (images/videos) to the left or to the right of some content.
+       mr: margin-right, ml: margin-left, mt: margin-top, mb: margin-bottom
+       my: margin-top and margin-bottom, mx: margin-left and marging-right   -->
+
+  <!-- Left-aligned -->
+  <div *ngIf="(book.id)%2 == 0">
+    <div class="media my-4" >
+      <div class="media-left">
+        <!-- d-flex: container that quickly manage the layout, alignment, and sizing of grid columns,
+           mr-3 : margin-right-3  -->
+        <img class="d-flex mr-3 img-thumbnail" src="{{book.imageURL}}" alt="image">
+      </div>
+
+      <div class="media-body">
+        <h5 class="media-heading"><a href="">{{book.title}}</a></h5>
+        <p>{{book.description}}</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- right-aligned -->
+  <div *ngIf="(book.id)%2 != 0">
+    <div class="media my-4" >
+      <div class="media-body">
+        <h5 class="media-heading"><a href="">{{book.title}}</a></h5>
+        <p>{{book.description}}</p>
+      </div>
+
+      <div class="media-right">
+        <img class="d-flex mr-3 img-thumbnail" src="{{book.imageURL}}" alt="image">
+      </div>
+    </div>
+  </div>
+</div>
+
