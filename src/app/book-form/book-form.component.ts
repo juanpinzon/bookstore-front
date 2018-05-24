@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bs-book-form',
@@ -16,9 +17,13 @@ export class BookFormComponent implements OnInit {
     language: "English"
   };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  create() {
+    this.router.navigate(['/book-list']);
   }
 
 }

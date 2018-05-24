@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">{{title}}</a>
+  <a class="navbar-brand" [routerLink]="['/book-list']">{{title}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">List <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/book-list']">List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Create</a>
+        <a class="nav-link" [routerLink]="['/book-form']">Create</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -41,15 +41,8 @@
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-      <div class="col-md-4">
-        <bs-book-list></bs-book-list>
-      </div>
-      <div class="col-md-4">
-        <bs-book-detail></bs-book-detail>
-      </div>
-      <div class="col-md-4">
-        <bs-book-form></bs-book-form>
-      </div>
+      <!--/this is change for each one of the components-->
+      <router-outlet></router-outlet>
     </div>
 
     <hr>

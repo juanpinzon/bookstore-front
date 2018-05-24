@@ -14,7 +14,7 @@
       </div>
 
       <div class="media-body">
-        <h5 class="media-heading"><a href="">{{book.title}}</a></h5>
+        <h5 class="media-heading"><a [routerLink]="['/book-detail', book.id]">{{book.title}}</a></h5>
         <p>{{book.description}}</p>
       </div>
     </div>
@@ -25,7 +25,7 @@
   <div *ngIf="(book.id)%2 != 0">
     <div class="media my-4" >
       <div class="media-body">
-        <h5 class="media-heading"><a href="">{{book.title}}</a></h5>
+        <h5 class="media-heading"><a [routerLink]="['/book-detail', book.id]">{{book.title}}</a></h5>
         <p>{{book.description}}</p>
       </div>
 
